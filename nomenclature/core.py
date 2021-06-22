@@ -1,5 +1,7 @@
 from pathlib import Path
+from pyam import IamDataFrame
 from nomenclature.codes import CodeList
+from nomenclature.validation import validate
 
 
 class Nomenclature():
@@ -10,3 +12,22 @@ class Nomenclature():
             path = Path(path)
 
         self.variable = CodeList("variable").parse_files(path / "variables")
+
+    def validate(self, df: IamDataFrame) -> None:
+        """Validate that the coordinates of `df` are defined in the codelists
+
+        Parameters
+        ----------
+        df : IamDataFrame
+            An IamDataFrame to be validated against the codelists of this nomenclature.
+
+        Returns
+        -------
+        None
+
+        Raises
+        ------
+        ValueError
+            If `df` fails validation against any codelist.
+        """
+        validate(self, df)
