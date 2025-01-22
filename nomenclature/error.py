@@ -40,6 +40,10 @@ pydantic_custom_error_config = {
         "region_not_defined",
         "Region(s)\n{regions}\nin {file}\nnot found in RegionCodeList",
     ),
+    "AggregationMappingConflict": (
+        "aggregation_mapping_conflict",
+        "Duplicate {type} {duplicates} in aggregation-mapping in {file}",
+    ),
 }
 
 PydanticCustomErrors = namedtuple("PydanticCustomErrors", pydantic_custom_error_config)
