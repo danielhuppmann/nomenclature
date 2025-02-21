@@ -37,7 +37,7 @@ def test_DataValidator_from_file():
 @pytest.mark.parametrize(
     "name, match",
     [
-        ("missing_criteria", "No validation criteria provided:"),
+        ("missing_criteria", "Field required"),
         ("bounds_and_value", "Must use either bounds, range or value, found:"),
         ("bounds_and_rtol", "Must use either bounds, range or value, found:"),
     ],

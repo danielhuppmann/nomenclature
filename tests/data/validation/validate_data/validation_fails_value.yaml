@@ -1,12 +1,15 @@
  # 2005 value passes the validation, fails validation for 2010 for both scenarios
- - variable: Primary Energy
-   value: 2.
-   atol: 1.
+- variable: Primary Energy
+  validation:
+    value: 2.
+    atol: 1.
 # variable exists only for 'scen_a', fails validation for 2005
- - variable: Primary Energy|Coal
-   value: 3
+- variable: Primary Energy|Coal
+  validation:
+    value: 3
 # both upper and lower bound fail for both scenarios
- - variable: Primary Energy
-   year: 2005
-   value: 1.5
-   rtol: 0.2
+- variable: Primary Energy
+  year: 2005
+  validation:
+    value: 1.5
+    rtol: 0.2
